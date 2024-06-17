@@ -40,7 +40,7 @@ function App() {
   ]
 
   const filtrando = cadastro.filter(item => {
-    return(item.tem_pai === true)
+    return(item.tem_pai === false)
      
   })
 
@@ -64,7 +64,7 @@ function App() {
   ]
 
   const filtrandofeira = feira.filter(item => {
-    return (item.trouxe === "abacaxi")
+    return (item.trouxe !== "abacaxi")
   })
   
   
