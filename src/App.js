@@ -1,4 +1,4 @@
-import {Louco, Click} from './utils'; 
+import {Louco} from './utils'; 
 import './App.css';
 import React from 'react';
 
@@ -8,8 +8,8 @@ function App() {
 
   return (
     <form>
-      <input onChange={(e) => {Louco(e.target.value +'--é muito louco--')}}/>
-      <button onClick={(e) =>{Click()}}>Enviar</button>
+      <input onChange={(e) => {Louco(e.target.value)}}/>
+      <button onClick={(e) =>{}}>Enviar</button>
     </form>
   );
 }
