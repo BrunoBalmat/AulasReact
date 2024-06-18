@@ -1,11 +1,16 @@
-import logo from './logo.svg';
+import {Louco, Click} from './utils'; 
 import './App.css';
+import React from 'react';
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      
-    </div>
+    <form>
+      <input onChange={(e) => {Louco(e.target.value +'--é muito louco--')}}/>
+      <button onClick={(e) =>{Click()}}>Enviar</button>
+    </form>
   );
 }
 
