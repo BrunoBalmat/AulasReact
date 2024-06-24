@@ -21,31 +21,37 @@ function App() {
   })
 
   const cadastro = () => {
-    axios.post('https://concessionaria-1111f-default-rtdb.firebaseio.com/roupas/femininas/.json', {
+    axios.post('https://concessionaria-1111f-default-rtdb.firebaseio.com/roupas/femininas/.json',{
       cor: cor,
       tipo: tipo,
       valor: valor
     })
-      .then(function (response) {
-        alert('Roupa cadastrada')
-      }).catch(function () {
-        alert('roupa não cadastrada')
-      })
+      
 
+  }
+  const deletar = (id) => {
+    axios.delete(`https://concessionaria-1111f-default-rtdb.firebaseio.com/roupas/femininas/${id}.json`, {})
+
+    .then(function (response) {
+        alert('Roupa deletada')
+      }).catch(function () {
+        alert('roupa não deletada')
+      })
   }
 
 
   return (
     <div>
 
-      {resposta?.masculinas.tipo}
+      {/* {resposta?.masculinas.tipo} */}
       {
-        resposta && Object.values(resposta?.femininas).map(roupa => {
+        resposta && Object.entries(resposta?.femininas).map(roupa => {
           return (
             <>
-              <p>{roupa?.tipo}</p>
-              <p>{roupa?.cor}</p>
-              <p>{roupa?.valor}</p>
+            
+              <p>
+                {roupa[1]?.tipo}-{roupa[1]?.cor}-{roupa[1]?.valor}              
+              </p><button onClick={()=>deletar(roupa[0])}>Excluir</button>
             </>
           )
         })
